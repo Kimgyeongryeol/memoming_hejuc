@@ -1,0 +1,61 @@
+.cube_wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 50px auto 0 auto;
+    perspective: 3000px;
+    transform: scale();
+}
+.cube{
+    animation: 5s linear 0s infinite normal none running turn3;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+}
+
+
+.cube .side{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border: 2px solid #333;
+    text-align: center;
+    line-height: 500px;
+    font-size: 166.66667px;
+    color: #333;
+    background-color: white;
+}
+
+.cube .side:nth-child(1){
+    transform: translateZ(250px);
+}
+.cube .side:nth-child(2){
+    transform: rotateY(180deg) translateZ(250px);
+}
+.cube .side:nth-child(3){
+    transform: rotateY(-90deg) translateZ(250px);
+}
+.cube .side:nth-child(4){
+    transform: rotateY(90deg) translateZ(250px);
+}
+.cube .side:nth-child(5){
+    transform: rotateX(90deg) translateZ(250px);
+}
+.cube .side:nth-child(6){
+    transform: rotateX(-90deg) translateZ(250px);
+}
+
+@keyframes turn3 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
